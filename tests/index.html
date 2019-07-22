@@ -3,15 +3,53 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Experimento3</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<!-- <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen"> -->
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 	</head>
 	<body>
 		<form action="https://send.pageclip.co/OM50Bp0uXbssBITF3JKsac306pcBSdX4" class="pageclip-form" method="post">
 		  <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
-<fieldset>
-	<input type="text" name="Edad" required><br>
-			<input type="text" name="name" value="Roscoe Jones" />
+			<fieldset>
+				<label>Edad en años<input type="text" name="Edad" required /></label> <br>
+				<label>Peso en Kg<input type="text" name="Peso" required /></label> <br>
+				<label>Diagnóstico de FM?<input type="radio" name="diagnostico" value="Si">Si</label>
+				<label><input type="radio" name="diagnostico" value="No" required />No</label><br>
+				<label>Años desde diagnóstico<input type="text" name="AnosD" required /></label><br>
+				<label>Número medio de minutos en los que realiza deporte/actividad física al día<input type="text" name="Deporte" required /></label> <br>
+			</fieldset>
+
+			<fieldset>
+			<div class="bdi" style="padding:40px">Intrucciones del test</div>
+			<ol class="questions">
+				<li class="item1">Q1 de BDI</li>
+				<div class="answerSet">
+					<div><label><input type="radio" name="AnswerQ1" value="1">R1</label></div>
+					<div><label><input type="radio" name="AnswerQ1" value="2">R2</label></div>
+					<div><label><input type="radio" name="AnswerQ1" value="3">R3</label></div>
+					<div><label><input type="radio" name="AnswerQ1" value="4" required >R4</label></div>
+				</div>
+				<li class="item2">Q2 de BDI</li>
+				<div class="answerSet">
+					<div><label><input type="radio" name="AnswerQ2" value="1">R1</label></div>
+					<div><label><input type="radio" name="AnswerQ2" value="2">R2</label></div>
+					<div><label><input type="radio" name="AnswerQ2" value="3">R3</label></div>
+					<div><label><input type="radio" name="AnswerQ2" value="4" required >R4</label></div>
+				</div>
+				<li class="item3">Q3 de BDI</li>
+				<div class="answerSet">
+					<div><label><input type="radio" name="AnswerQ3" value="1">R1</label></div>
+					<div><label><input type="radio" name="AnswerQ3" value="2">R2</label></div>
+					<div><label><input type="radio" name="AnswerQ3" value="3">R3</label></div>
+					<div><label><input type="radio" name="AnswerQ3" value="4" required >R4</label></div>
+				</div>
+				<li class="item4">Q4 de BDI</li>
+				<div class="answerSet">
+					<div><label><input type="radio" name="AnswerQ4" value="1">R1</label></div>
+					<div><label><input type="radio" name="AnswerQ4" value="2">R2</label></div>
+					<div><label><input type="radio" name="AnswerQ4" value="3">R3</label></div>
+					<div><label><input type="radio" name="AnswerQ4" value="4" required >R4</label></div>
+				</div>
+			</fieldset>
 		  <input type="email" name="email" value="roscoe@example.com" />
 			<input type="hidden" name="version" value="v1alksnf aklsjlkajs hflkajsh lkajhdg lkasjhdf lkasjdh
 			askdj kasjdh lkasjdhl kasjhdflasjhdfkasjhd quehiqowu efsjkhfd lkwueh iqwuehflskjdhf lakjshfalsuhdg
