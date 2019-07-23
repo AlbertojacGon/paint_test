@@ -64,6 +64,7 @@ function save() {
 		var dataURL = canvas.toDataURL();
 		document.getElementById("canvasimg").src = dataURL;
 		document.getElementById("canvasimg").style.display = "inline";
+		document.getElementById('canvasimg').value = canvas.toDataURL();
 }
 
 function findxy(res, e) {
