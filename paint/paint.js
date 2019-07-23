@@ -62,9 +62,9 @@ function erase() {
 function save() {
 		document.getElementById("canvasimg").style.border = "2px solid";
 		var dataURL = canvas.toDataURL();
-		document.getElementById("canvasimg").src = dataURL;
-		document.getElementById("canvasimg").style.display = "inline";
-		document.getElementById('canvasimg').value = canvas.toDataURL();
+		// document.getElementById("canvasimg").src = dataURL;
+		// document.getElementById("canvasimg").style.display = "inline";
+		document.getElementById('canvasimg').value = dataURL;
 }
 
 function findxy(res, e) {
