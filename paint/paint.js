@@ -62,9 +62,13 @@ function erase() {
 function save() {
 		document.getElementById("canvasimg").style.border = "2px solid";
 		var dataURL = canvas.toDataURL();
-		// document.getElementById("canvasimg").src = dataURL;
-		// document.getElementById("canvasimg").style.display = "inline";
-		document.getElementById('canvasimg').value = dataURL;
+		document.getElementById("canvasimg").src = dataURL;
+		document.getElementById("canvasimg").style.display = "inline";
+}
+
+function prepareImg() {
+	 var canvas = document.getElementById('canvasimg');
+	 document.getElementById('inp_img').value = canvas.toDataURL();
 }
 
 function findxy(res, e) {

@@ -1,37 +1,49 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-</head><body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Paint5</title>
+		<link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+		<style>
+			#container { position: absolute; }
+			#imageView { border: 1px solid #000; }
+		</style>
+	</head>
+    <script type="text/javascript">
 
+    </script>
+    <body onload="init()">
+			<div id="tools">
+      <center><p>Colors</p></center>
+       <div id="contain">
+				 <div id="red" onclick="color(this)"></div>
+				<div style="position:fixed; cursor: pointer;left:200px;width:20px;height:20px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+				</div>
+			</div>
+			<div class="container2">
+				<div>Borrar</div>
+				<div style="position:relative; top:10px;left:140px;">Pintar</div>
+			</div>
+      <canvas id="can" width="400" height="400" style="position:relative;cursor:crosshair; top:10px;left:10px;border:2px solid;"
+				<p>Unfortunately, your browser is currently unsupported by our web application.
+					We are sorry for the inconvenience. Please use one of the supported browsers listed below</p>
+					<p>Supported browsers: <a
+						href="https://www.google.com/chrome/">Chrome</a>, <a
+						href="https://www.mozilla.org">Firefox</a>, <a
+						href="https://www.apple.com/safari/">Safari</a>.</p>
+			></canvas>
 
-<canvas id="canv" width="200" height="200"></canvas>
+      <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
+			<!-- <form action="https://send.pageclip.co/OM50Bp0uXbssBITF3JKsac306pcBSdX4" class="pageclip-form" method="post"> -->
+			<form action="https://usebasin.com/f/2cf9ca060022" method="POST">>
+				<label>Edad en años<input type="text" name="Edad" required /></label> <br>
+				<form method="post" action="https://usebasin.com/f/2cf9ca060022" onsubmit="prepareImg();">
+				  <input id="inp_img" name="img" type="hidden" value="">
+				  <input id="bt_upload" type="submit" value="Upload">
+				</form>
+      <input type="button" value="Borrar Todo" id="clr" size="23" onclick="erase()" style="position:absolute;color:red; bottom:85px;left:250px;">
 
-<form method="post" action="https://usebasin.com/f/2cf9ca060022" onsubmit="prepareImg();">
-  <input id="inp_img" name="img" type="hidden" value="">
-  <input id="bt_upload" type="submit" value="Upload">
-</form>
-
-
-
-<script>
-
-  var canvas = document.getElementById('canv');
-  var context = canvas.getContext('2d');
-
-  context.arc(100, 100, 50, 0, 2 * Math.PI);
-  context.lineWidth = 5;
-  context.fillStyle = '#EE1111';
-  context.fill();
-  context.strokeStyle = '#CC0000';
-  context.stroke();
-
-
-  function prepareImg() {
-     var canvas = document.getElementById('canv');
-     document.getElementById('inp_img').value = canvas.toDataURL();
-  }
-
-</script>
-
-</body></html>
+			<script src="paint.js"></script>
+			<!-- <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script> -->
+    </body>
+    </html>
