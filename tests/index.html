@@ -14,12 +14,10 @@
 					 document.getElementById("IdNum").value = pair[1];
 		}
 
-		var cntinue = document.getElementById("continue");
-		var send = document.getElementById("send");
-
 		function showContinue() {
-		    send.style.display="none";
-		    cntinue.style.display="block";
+		    document.getElementById("send").style.display="none";
+		    document.getElementById("continue").style.display="inline";
+				console.log('ata aqui chego')
 		}
 	</script>
 
@@ -72,7 +70,8 @@
 			<input id='IdNum' type="hidden" name="version" value="" />
 		  <!-- This button will have a loading spinner. Keep the inner span for best results. -->
 			<input id='continue' onclick="window.location.href = '../paint/index.html';" type="submit" value="Continuar" style="display: none;"/>
-		  <button id='send' class="pageclip-form__submit" onclick="showContinue();">
+		  <!-- <button id='send' class="pageclip-form__submit" onclick="showContinue();"> -->
+			<button id='send' class="pageclip-form__submit">
 				<span>Enviar</span>
 		  </button>
 		</form>
