@@ -6,13 +6,18 @@ var canvas, ctx, flag = false,
 		dot_flag = false;
 
 var x = "red",
-		y = 6;
+		y = 0.25;
 
 function init() {
 		canvas = document.getElementById('can');
 		ctx = canvas.getContext("2d");
 		w = canvas.width;
 		h = canvas.height;
+
+
+		canvas0 = document.getElementById('can0');
+		ctx0 = canvas0.getContext("2d");
+		make_base();
 
 		canvas.addEventListener("mousemove", function (e) {
 				findxy('move', e)
@@ -28,47 +33,75 @@ function init() {
 		}, false);
 }
 
+
+
+
+
+function make_base()
+{
+  base_image = new Image();
+  base_image.src = 'img/base.png';
+  base_image.onload = function(){
+    ctx0.drawImage(base_image, 0, 0);
+  }
+}
+
+function lineWidthRange() {
+    var widthLine = document.getElementById("myRange").value;
+    return widthLine;
+};
+
 function color(obj) {
 		switch (obj.id) {
 				case "red":
 						x = "red";
-						y = 6;
+						y = 0.1
+						ctx.globalCompositeOperation = "source-over";
 						break;
 				case "white":
 						x = "white";
-						y = 24;
+						y = 1;
+						ctx.globalCompositeOperation = "destination-out";
+						ctx.strokeStyle = "rgba(0,0,0,1)";
 						break;
 		}
 }
 
 function draw() {
 		ctx.beginPath();
-		ctx.moveTo(prevX, prevY);
-		ctx.lineTo(currX, currY);
+		ctx.lineWidth = lineWidthRange();
 		ctx.strokeStyle = x;
-		ctx.lineWidth = y;
-		ctx.stroke();
-		ctx.closePath();
+		ctx.lineCap = "round"
+		ctx.globalAlpha = y;
+		ctx.arc(currX, currY, ctx.lineWidth, 0, 2*Math.PI);
+		ctx.fillStyle = x
+    ctx.fill();
+
 }
 
 function erase() {
 		var m = confirm("Seguro que desea borrar todo?");
 		if (m) {
 				ctx.clearRect(0, 0, w, h);
-				document.getElementById("canvasimg").style.display = "none";
 		}
 }
 
 function save() {
-		document.getElementById("canvasimg").style.border = "2px solid";
-		var dataURL = canvas.toDataURL();
-		document.getElementById("canvasimg").src = dataURL;
-		document.getElementById("canvasimg").style.display = "inline";
+		var m2 = confirm("Esta será la imagen final que se enviará. Desea proceder?");
+		if (m2) {
+				var dataURL = canvas.toDataURL();
+				document.getElementById('inp_img').value = dataURL;
+				document.getElementById('submitForm').action="https://usebasin.com/f/2cf9ca060022"
+		}
 }
 
-function prepareImg() {
-	 var canvas = document.getElementById('canvasimg');
-	 document.getElementById('inp_img').value = canvas.toDataURL();
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
 }
 
 function findxy(res, e) {
@@ -77,16 +110,9 @@ function findxy(res, e) {
 				prevY = currY;
 				currX = e.clientX - canvas.offsetLeft;
 				currY = e.clientY - canvas.offsetTop;
-
+				draw();
 				flag = true;
-				dot_flag = true;
-				if (dot_flag) {
-						ctx.beginPath();
-						ctx.fillStyle = x;
-						ctx.fillRect(currX, currY, 2, 2);
-						ctx.closePath();
-						dot_flag = false;
-				}
+
 		}
 		if (res == 'up' || res == "out") {
 				flag = false;
@@ -98,6 +124,7 @@ function findxy(res, e) {
 						currX = e.clientX - canvas.offsetLeft;
 						currY = e.clientY - canvas.offsetTop;
 						draw();
+						sleep(90)
 				}
 		}
 }

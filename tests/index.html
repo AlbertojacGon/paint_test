@@ -5,6 +5,16 @@
 		<title>Experimento3</title>
 		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+		<script>
+		function getId()
+		{
+		       var query = window.location.search.substring(1);
+		       var pair = query.split("=");
+					 console.log(pair[1]);
+					 document.getElementById("IdNum").value = pair[1];
+		}
+	</script>
+
 	</head>
 	<body>
 		<form action="https://send.pageclip.co/OM50Bp0uXbssBITF3JKsac306pcBSdX4" class="pageclip-form" method="post">
@@ -51,13 +61,16 @@
 					<div><label><input type="radio" name="AnswerQ4" value="4" required >R4</label></div>
 				</div>
 			</fieldset>
-		  <input type="email" name="email" value="roscoe@example.com" />
-			<input type="hidden" name="version" value="put random text here " />
+			<input id='IdNum' type="hidden" name="version" value="" />
 		  <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-		  <button type="submit" class="pageclip-form__submit" formaction="../paint/index.html">
+		  <button target="_blank" type="submit" class="pageclip-form__submit" >
+				<input onclick="window.location.href = '../paint/index.html';" type="submit" value="Submit request" />
 		    <span>Enviar</span>
 		  </button>
 		</form>
 		<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			getId();
+		</script>
 	</body>
 </html>
