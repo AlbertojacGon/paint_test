@@ -10,14 +10,12 @@
 		{
 		       var query = window.location.search.substring(1);
 		       var pair = query.split("=");
-					 console.log(pair[1]);
 					 document.getElementById("IdNum").value = pair[1];
 		}
 
 		function showContinue() {
 		    document.getElementById("send").style.display="none";
 		    document.getElementById("continue").style.display="inline";
-				console.log('ata aqui chego')
 		}
 	</script>
 
@@ -82,7 +80,7 @@
 			Pageclip.form(form, {
 			  onSubmit: function (event) { },
 			  onResponse: function (error, response) { },
-			  successTemplate: '<span>Thank you!</span> showContinue();'
+			  successTemplate: "window.open('http://www.yoururl.com', '_blank');'"
 			})
 
 		</script>
