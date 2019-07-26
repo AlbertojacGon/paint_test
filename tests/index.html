@@ -69,7 +69,7 @@
 			</fieldset>
 			<input id='IdNum' type="hidden" name="version" value="" />
 		  <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-			<input id='continue' onclick="window.location.href = '../paint/index.html';" type="submit" value="Continuar" style="display: inline;"/>
+			<!-- <input id='continue' onclick="window.location.href = '../paint/index.html';" type="submit" value="Continuar" style="display: inline;"/> -->
 		  <!-- <button id='send' class="pageclip-form__submit" onclick="showContinue();"> -->
 			<button id='send' class="pageclip-form__submit">
 				<span>Enviar</span>
@@ -83,7 +83,7 @@
 			Pageclip.form(form, {
 			  onSubmit: function (event) { },
 			  onResponse: function (error, response) { },
-			  successTemplate: "window.location.href = '../paint/index.html';"
+			  successTemplate: "<input id='continue' onclick='window.location.href = '../paint/index.html';' type='submit' value='Continuar' style='display: inline;'/>"
 			})
 		</script>
 	</body>
