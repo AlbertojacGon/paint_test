@@ -82,8 +82,8 @@
 
 			Pageclip.form(form, {
 			  onSubmit: function (event) { },
-			  onResponse: "window.location.href = '../paint/index.html';",
-			  successTemplate: '<span>Gracias</span>'
+			  onResponse: function (error, response) { ,
+			  successTemplate: "<button id='send' class='pageclip-form__submit' onclick='showContinue();'>;"
 			})
 		</script>
 	</body>
