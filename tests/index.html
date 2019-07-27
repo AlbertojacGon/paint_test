@@ -24,11 +24,11 @@
 		<form action="https://send.pageclip.co/OM50Bp0uXbssBITF3JKsac306pcBSdX4" class="pageclip-form" method="post">
 		  <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
 			<fieldset>
-				<label>Edad en años<input type="text" name="Edad" required /></label> <br>
-				<label>Peso en Kg<input type="text" name="Peso" required /></label> <br>
-				<label>Número medio de minutos en los que realiza deporte/actividad física al día<input type="text" name="Deporte" required /></label> <br>
-				<label>Diagnóstico de FM?<input type="radio" name="diagnostico" value="Si">Si</label>
-				<label><input type="radio" name="diagnostico" value="No" required />No</label><br>
+				<label>Edad en años<input class="reqAns" type="text" name="Edad" required /></label> <br>
+				<label>Peso en Kg<input class="reqAns" type="text" name="Peso" required /></label> <br>
+				<label>Número medio de minutos en los que realiza deporte/actividad física al día<input class="reqAns" type="text" name="Deporte" required /></label> <br>
+				<label>Diagnóstico de FM?<input class="reqAns" type="radio" name="diagnostico" value="Si">Si</label>
+				<label><input class="reqAns" type="radio" name="diagnostico" value="No" required />No</label><br>
 				<label><br>Si ha respondido "Si" a la pregunta anterior:<br>Años desde que ha sido diagnosticad@ de FM<input type="text" name="AnosD"/></label><br>
 
 			</fieldset>
@@ -37,28 +37,28 @@
 			<div class="bdi" style="padding:40px">Intrucciones del test</div>
 			<ol class="questions">
 				<li class="item1">Q1 de BDI</li>
-				<div class="answerSet">
+				<div class="reqAns">
 					<div><label><input type="radio" name="AnswerQ1" value="1">R1</label></div>
 					<div><label><input type="radio" name="AnswerQ1" value="2">R2</label></div>
 					<div><label><input type="radio" name="AnswerQ1" value="3">R3</label></div>
 					<div><label><input type="radio" name="AnswerQ1" value="4" required >R4</label></div>
 				</div>
 				<li class="item2">Q2 de BDI</li>
-				<div class="answerSet">
+				<div class="reqAns">
 					<div><label><input type="radio" name="AnswerQ2" value="1">R1</label></div>
 					<div><label><input type="radio" name="AnswerQ2" value="2">R2</label></div>
 					<div><label><input type="radio" name="AnswerQ2" value="3">R3</label></div>
 					<div><label><input type="radio" name="AnswerQ2" value="4" required >R4</label></div>
 				</div>
 				<li class="item3">Q3 de BDI</li>
-				<div class="answerSet">
+				<div class="reqAns">
 					<div><label><input type="radio" name="AnswerQ3" value="1">R1</label></div>
 					<div><label><input type="radio" name="AnswerQ3" value="2">R2</label></div>
 					<div><label><input type="radio" name="AnswerQ3" value="3">R3</label></div>
 					<div><label><input type="radio" name="AnswerQ3" value="4" required >R4</label></div>
 				</div>
 				<li class="item4">Q4 de BDI</li>
-				<div class="answerSet">
+				<div class="reqAns">
 					<div><label><input type="radio" name="AnswerQ4" value="1">R1</label></div>
 					<div><label><input type="radio" name="AnswerQ4" value="2">R2</label></div>
 					<div><label><input type="radio" name="AnswerQ4" value="3">R3</label></div>
@@ -77,6 +77,7 @@
 		<script type="text/javascript">
 			getId();
 			var form = document.querySelector('.pageclip-form')
+			console.log(form)
 			Pageclip.form(form, {
 			  onSubmit: function (event) { },
 			  onResponse: function (error, response) { },
