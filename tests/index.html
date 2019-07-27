@@ -11,6 +11,7 @@
 		       var query = window.location.search.substring(1);
 		       var pair = query.split("=");
 					 document.getElementById("IdNum").value = pair[1];
+					 document.getElementById("IdNum2").value = pair[1];
 		}
 
 		function showContinue() {
@@ -33,9 +34,6 @@
 			if (isF1 && isF2 && isF3 && isF4 && isF5 && isF6 && isF7 && isF8){
 		    document.getElementById("send").style.display="none";
 		    document.getElementById("continue").style.display="inline";
-				var query = window.location.search.substring(1);
-				var pair = query.split("=");
-				document.getElementById("IdNum2").value = pair[1];
 			}
 		}
 	</script>
