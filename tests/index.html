@@ -14,8 +14,13 @@
 		}
 
 		function showContinue() {
+			const isF1 = f1.checkValidity();
+			const isF2 = f2.checkValidity();
+			console.log(isF1)
+			if (isF1 && isF2){
 		    document.getElementById("send").style.display="none";
 		    document.getElementById("continue").style.display="inline";
+			}
 		}
 	</script>
 
@@ -24,8 +29,8 @@
 		<form action="https://send.pageclip.co/OM50Bp0uXbssBITF3JKsac306pcBSdX4" class="pageclip-form" method="post">
 		  <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
 			<fieldset>
-				<label>Edad en años<input class="reqAns" type="text" name="Edad" required /></label> <br>
-				<label>Peso en Kg<input class="reqAns" type="text" name="Peso" required /></label> <br>
+				<label>Edad en años<input id='f1' class="reqAns" type="text" name="Edad" required /></label> <br>
+				<label>Peso en Kg<input id='f1' class="reqAns" type="text" name="Peso" required /></label> <br>
 				<label>Número medio de minutos en los que realiza deporte/actividad física al día<input class="reqAns" type="text" name="Deporte" required /></label> <br>
 				<label>Diagnóstico de FM?<input class="reqAns" type="radio" name="diagnostico" value="Si">Si</label>
 				<label><input class="reqAns" type="radio" name="diagnostico" value="No" required />No</label><br>
@@ -77,7 +82,6 @@
 		<script type="text/javascript">
 			getId();
 			var form = document.querySelector('.pageclip-form')
-			console.log(form)
 			Pageclip.form(form, {
 			  onSubmit: function (event) { },
 			  onResponse: function (error, response) { },
