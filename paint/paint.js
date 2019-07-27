@@ -92,7 +92,8 @@ function save() {
 				var dataURL = canvas.toDataURL();
 				var query = window.location.search.substring(1);
 				var pair = query.split("=");
-				document.getElementById('inp_img').value = str.concat(pair[1], dataURL);
+				document.getElementById('inp_img').value = dataURL;
+				document.getElementById('idNum').value = pair[1];
 				document.getElementById('submitForm').action="https://usebasin.com/f/2cf9ca060022"
 		}
 }
