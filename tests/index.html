@@ -43,7 +43,8 @@
 	<body>
 		<form action="../paint/index.html" method="get">
 			<input id="idNum2" type="hidden" name="idNum2" value='' />
-			<button id='continue' type="submit" style="display: none;"/>Aceptar</button>
+			<button id='continue' type="submit" style="display: none; position: absolute;
+    top: 50%; left: 50%; font-size : 30px; color:red"/>Continuar</button>
 		</form>
 
 		<form action="https://send.pageclip.co/OM50Bp0uXbssBITF3JKsac306pcBSdX4" class="pageclip-form" method="post">
@@ -106,7 +107,7 @@
 			Pageclip.form(form, {
 			  onSubmit: function (event) { },
 			  onResponse: function (error, response) { },
-			  successTemplate: '<div class="pageclip-form__success__message">Gracias!</div>'
+			  successTemplate: '<div class="pageclip-form__success__message">Gracias! Pulsa el botón continuar para pasar a la segunda parte</div>'
 			})
 
 		</script>
