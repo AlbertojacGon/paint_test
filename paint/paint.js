@@ -90,7 +90,9 @@ function save() {
 		var m2 = confirm("Esta será la imagen final que se enviará. Desea proceder?");
 		if (m2) {
 				var dataURL = canvas.toDataURL();
-				document.getElementById('inp_img').value = dataURL;
+				var query = window.location.search.substring(1);
+				var pair = query.split("=");
+				document.getElementById('inp_img').value = str.concat(pair[1], dataURL);
 				document.getElementById('submitForm').action="https://usebasin.com/f/2cf9ca060022"
 		}
 }
