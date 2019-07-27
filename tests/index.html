@@ -11,6 +11,8 @@
 		       var query = window.location.search.substring(1);
 		       var pair = query.split("=");
 					 document.getElementById("IdNum").value = pair[1];
+					 document.getElementById("continue").value = pair[1];
+
 		}
 
 		function showContinue() {
@@ -91,9 +93,9 @@
 		  </button>
 		</form>
 
-		<form align="center">
-			<input id="idNum" type="hidden" name="idNum" value="" />
-			<button id='continue' type="submit" formaction="../paint/index.html" style="display: none;"/>Aceptar</button>
+		<form action="../paint/index.html" method="get">
+			<!-- <input id="idNum2" type="hidden" name="idNum2" value="1232" /> -->
+			<button id='continue' type="submit" style="display: none;"/>Aceptar</button>
 		</form>
 
 		<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
