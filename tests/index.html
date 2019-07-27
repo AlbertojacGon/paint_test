@@ -33,7 +33,7 @@
 			if (isF1 && isF2 && isF3 && isF4 && isF5 && isF6 && isF7 && isF8){
 		    document.getElementById("send").style.display="none";
 		    document.getElementById("continue").style.display="inline";
-				document.getElementById("continue").value = document.getElementById("IdNum").value 
+				document.getElementById("IdNum2").value = document.getElementById("IdNum").value
 			}
 		}
 	</script>
@@ -86,11 +86,14 @@
 			</fieldset>
 			<input id='IdNum' type="hidden" name="version" value="" />
 		  <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-			<input id='continue' onclick="window.location.href = '../paint/index.html';" type="submit" value="Continuar" style="display: none;"/>
 		  <button id='send' class="pageclip-form__submit" onclick="showContinue();">
 			<!-- <button id='send' class="pageclip-form__submit"> -->
 				<span>Enviar</span>
 		  </button>
+		</form>
+		<form align="center">
+			<input id='IdNum2' type="hidden" name="version" value="" />
+			<input id='continue' onclick="window.location.href = '../paint/index.html';" type="submit" value="Continuar" style="display: none;"/>
 		</form>
 		<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 		<script type="text/javascript">
